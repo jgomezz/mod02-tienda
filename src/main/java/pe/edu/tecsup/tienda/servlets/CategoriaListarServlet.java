@@ -46,7 +46,11 @@ public class CategoriaListarServlet extends HttpServlet {
 		try {
 			List<Categoria> categorias = categoriaService.listar(); 
 
-			log.info(categorias.toString());
+			for (Categoria categoria : categorias) {
+				log.info(categoria.toString());
+			}
+			
+			
 			
 		} catch (Exception e) { 
 			

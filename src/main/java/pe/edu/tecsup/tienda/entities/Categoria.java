@@ -5,6 +5,7 @@ public class Categoria {
 	private Integer id;
 	private String nombre;
 	private Integer orden;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -23,6 +24,7 @@ public class Categoria {
 	public void setOrden(Integer orden) {
 		this.orden = orden;
 	}
+	
 	@Override
 	public String toString() {
 		return "Categoria [id=" + id + ", nombre=" + nombre + ", orden=" + orden + "]";

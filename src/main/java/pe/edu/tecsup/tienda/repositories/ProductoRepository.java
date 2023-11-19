@@ -70,16 +70,16 @@ public class ProductoRepository {
 	 * @throws Exception
 	 */
 	public void registrar(Producto producto) throws Exception {
-		
+
 		log.info("call registrar(producto: " + producto + ")");
-		
+
 		Connection con = ConexionBD.obtenerConexion();
-		
+
 		String query = "INSERT INTO productos (categorias_id, nombre, descripcion, precio, stock, imagen_nombre, imagen_tipo, imagen_tamanio)\r\n"
 				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-		
+
 		PreparedStatement stmt = con.prepareStatement(query);
-		
+
 		stmt.setInt(1, producto.getCategorias_id());
 		stmt.setString(2, producto.getNombre());
 		stmt.setString(3, producto.getDescripcion());
@@ -89,11 +89,34 @@ public class ProductoRepository {
 		stmt.setString(7, producto.getImagen_tipo());
 		stmt.setObject(8, producto.getImagen_tamanio());
 		stmt.executeUpdate();
+
+		stmt.close();
+
+		con.close();
+
+		log.info("success!");
+	}
+
+
+	public void eliminar(Integer id) throws Exception {
+		
+		log.info("call eliminar(id: " + id + ")");
+		
+		Connection con = ConexionBD.obtenerConexion();
+		
+		String query = "DELETE FROM productos WHERE id=?";
+		
+		PreparedStatement stmt = con.prepareStatement(query);
+
+		stmt.setInt(1, id);
+		
+		stmt.executeUpdate();
 		
 		stmt.close();
 		
 		con.close();
 		
 		log.info("success!");
+
 	}
 }

@@ -26,10 +26,18 @@ public class ProductoService {
 	}
 
 	public void registrar(Producto producto) throws Exception {
-		
+
 		log.info("call registrar(producto: " + producto + ")");
-		
+
 		productoRepository.registrar(producto);
+
+	}
+
+	public void eliminar(Integer id) throws Exception {
+		
+		log.info("call eliminar(id: " + id + ")");
+		
+		productoRepository.eliminar(id);
 	
 	}
 

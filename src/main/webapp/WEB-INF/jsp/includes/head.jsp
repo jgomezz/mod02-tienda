@@ -29,6 +29,18 @@
 	src="//cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
 
 <script>
+
+	jQuery('#linkGrabar').click(function (e) {
+		
+	
+		jConfirm("¿Desea GRABAR?", "Atención", function (r) {
+			
+			// TO DO 
+		});
+		
+    });
+
+
 	$(function() {
 		bsCustomFileInput.init();
 	});

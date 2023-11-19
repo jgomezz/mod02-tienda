@@ -72,8 +72,8 @@
 						</div>
 					</div>
 					<div class="card-footer">
-						<button type="submit" class="btn btn-primary">Guardar</button>
-						<a href="<%=request.getContextPath()%>/ProductoListarServlet"
+						<button  type="submit" class="btn btn-primary">Guardar</button>
+						<a id="linkGrabar"  href="<%=request.getContextPath()%>/ProductoListarServlet"
 							class="btn btn- secondary">Cancelar</a>
 					</div>
 				</div>

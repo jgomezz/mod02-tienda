@@ -49,9 +49,10 @@
 										<img
 											src="<%=request.getContextPath()%>/files/<c:out value="${producto.imagen_nombre}"/>"
 											alt="" height="30">
-									</c:if> Retirar</a></td>
+									</c:if>
 								<td class="text-right"><a href="#"
-									class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></td>
+									class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Retirar</a></td>
+								</td>
 							</tr>
 						</c:forEach>
 				</table>

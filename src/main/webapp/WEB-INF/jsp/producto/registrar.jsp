@@ -1,4 +1,4 @@
-<%@page import="pe.edu.tecsup.tienda.entities.Producto"%>
+<%@page import="pe.edu.tecsup.tienda.entities.Categoria"%>
 <%@page import="java.util.List"%>
 
 <!DOCTYPE html>
@@ -13,7 +13,10 @@
 
 	<%@include file="/WEB-INF/jsp/includes/navbar.jsp"%>
 
+	<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
 
-
+	<%=categorias %>
+	
+	
 </body>
 </html>

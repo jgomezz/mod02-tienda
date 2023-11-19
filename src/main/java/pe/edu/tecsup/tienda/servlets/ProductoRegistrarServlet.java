@@ -1,6 +1,7 @@
 package pe.edu.tecsup.tienda.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import pe.edu.tecsup.tienda.entities.Categoria;
 import pe.edu.tecsup.tienda.services.CategoriaService;
 import pe.edu.tecsup.tienda.services.ProductoService;
 
@@ -43,6 +45,17 @@ public class ProductoRegistrarServlet extends HttpServlet {
 
 		log.info("Get ProductoRegistrarServlet");
 	
+		List<Categoria> categorias;
+		try {
+			categorias = categoriaService.listar();
+		
+			request.setAttribute("categorias", categorias);
+						
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		} 
+		
 	
 		request.getRequestDispatcher("/WEB-INF/jsp/producto/registrar.jsp").
 				forward(request, response);

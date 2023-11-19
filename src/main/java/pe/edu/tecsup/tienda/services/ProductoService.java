@@ -7,23 +7,30 @@ import pe.edu.tecsup.tienda.repositories.ProductoRepository;
 
 public class ProductoService {
 
-	private static final Logger log 
-		= Logger.getLogger(ProductoService.class);
-	
+	private static final Logger log = Logger.getLogger(ProductoService.class);
+
 	private ProductoRepository productoRepository;
-	
+
 	public ProductoService() {
-	
+
 		this.productoRepository = new ProductoRepository();
-	
+
 	}
-	
+
 	public List<Producto> listar() throws Exception {
-	
+
 		log.info("call listar()");
-		
+
 		return productoRepository.listar();
+
+	}
+
+	public void registrar(Producto producto) throws Exception {
+		
+		log.info("call registrar(producto: " + producto + ")");
+		
+		productoRepository.registrar(producto);
 	
 	}
-	
+
 }

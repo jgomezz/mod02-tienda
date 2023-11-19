@@ -1,6 +1,8 @@
 <%@page import="pe.edu.tecsup.tienda.entities.Categoria"%>
 <%@page import="java.util.List"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,14 +35,10 @@
 						<label for="categorias_id">Categoría</label> <select
 							name="categorias_id" id="categorias_id" class="form-control"
 							required>
-							<option value="" selected disabled>Seleccione un valor</option>
-							<%
-							for (Categoria categoria : categorias) {
-							%>
-								<option value="<%=categoria.getId()%>"><%=categoria.getNombre()%></option>
-							<%
-							} // end foe 
-							%>
+							<c:forEach items="${categorias}" var="categoria">
+							 	<option value="<c:out value="${categoria.id}"/>">
+							 	<c:out value="${categoria.nombre}"/>
+							</c:forEach>
 						</select>
 					</div>
 					<div class="form-group">

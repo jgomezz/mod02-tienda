@@ -1,7 +1,10 @@
 
 <%@page import="pe.edu.tecsup.tienda.entities.Producto"%>
 <%@page import="java.util.List"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,22 +37,22 @@
 						</tr>
 					</thead>
 					<tbody>
-					<% for(Producto producto : productos) { %>
+					<c:forEach items="${productos}" var="producto">
 					<tr>
-						<td><%=producto.getId() %></td>
-						<td><%=producto.getNombre() %></td> 
-						<td><%=producto.getCategoria().getNombre() %>
-						</td> <td><%=producto.getPrecio() %></td>
+						<td><c:out value="${producto.id}"/></td>
+						<td><c:out value="${producto.nombre}"/></td>
+						<td><c:out value="${producto.categoria.nombre}"/></td>
+						<td><c:out value="${producto.precio}"/></td> 
 						<td class="text-right">
 							<a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i>
 							<a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> 
-							<a  href="<%=request.getContextPath()%>/ProductoEliminarServlet?id=<%=producto.getId() %>" 
+							<a  href="<%=request.getContextPath()%>/ProductoEliminarServlet?id=<c:out value="${producto.id}"/>" 
 								class="btn btn-danger btn-sm">
 									<i class="fa fa-trash"></i>
 							</a>
 						</td>
 					</tr>					
-					<% }  // end for%>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>

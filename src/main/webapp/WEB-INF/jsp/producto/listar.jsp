@@ -22,6 +22,13 @@
 
 	<div class="container-fluid pt-3">
 		<div class="display-4 mb-3">Mantenimiento de Productos</div>
+		
+		<c:if test="${sessionScope.success != null}">
+			 <div class="alert alert-success"><c:out value="${sessionScope.success}"/></div>
+			 <c:remove var="success"/>
+	    </c:if>
+ 
+		
 		<div class="card">
 			<div class="card-header">Lista de Productos</div>
 			<div class="card-body">

@@ -46,6 +46,10 @@ public class ProductoEliminarServlet extends HttpServlet {
 			
 			productoService.eliminar(id);
 		
+			// mensaje a mostrar en la vista
+			request.getSession().setAttribute("success", 
+					"Registro eliminado satisfactoriamente");
+						
 			response.sendRedirect(request.getContextPath() + "/ProductoListarServlet");
 		
 		} catch (Exception e) {

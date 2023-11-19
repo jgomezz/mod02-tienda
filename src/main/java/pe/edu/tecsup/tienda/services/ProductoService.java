@@ -34,11 +34,18 @@ public class ProductoService {
 	}
 
 	public void eliminar(Integer id) throws Exception {
-		
+
 		log.info("call eliminar(id: " + id + ")");
-		
+
 		productoRepository.eliminar(id);
-	
+
 	}
 
+	public Producto obtener(Integer id) throws Exception {
+		
+		log.info("call obtener(id: " + id + ")");
+	
+		return productoRepository.obtener(id);
+	
+	}
 }

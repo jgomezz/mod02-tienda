@@ -44,8 +44,10 @@ public class ProductoListarServlet extends HttpServlet {
 				log.info(producto.toString());
 			}
 			
+			// Para pasar la info al JSP se usa el scope request
 			request.setAttribute("productos", productos);
 			
+			// Llamar al JSP para mostrar los resultados
 			request.getRequestDispatcher(
 					"/WEB-INF/jsp/producto/listar.jsp")
 					.forward(request, response);

@@ -33,7 +33,7 @@
 							<th>CATEGOR&Iacute;A</th>
 							<th>PRECIO</th>
 							<th>IMAGEN</th>
-							<th width="300"></th>
+							<th width="250">ACCIONES</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -43,7 +43,14 @@
 						<td><c:out value="${producto.nombre}"/></td>
 						<td><c:out value="${producto.categoria.nombre}"/></td>
 						<td><c:out value="${producto.precio}"/></td> 
-						<td class="text-right">
+						<td>
+						<c:if test="${producto.imagen_nombre != null}">
+							<img src="<%=request.getContextPath()%>/files/<c:out value="${producto.imagen_nombre}"/>" 
+							     alt="" 
+							     height="30">
+						</c:if>
+						</td>
+						<td class="text-center">
 							<a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i>
 							<a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> 
 							<a  href="<%=request.getContextPath()%>/ProductoEliminarServlet?id=<c:out value="${producto.id}"/>" 

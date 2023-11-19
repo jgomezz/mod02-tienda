@@ -33,7 +33,7 @@
 							<th>CATEGOR&Iacute;A</th>
 							<th>PRECIO</th>
 							<th>IMAGEN</th>
-							<th width="250">ACCIONES</th>
+							<th width="300">ACCIONES</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -50,12 +50,12 @@
 							     height="30">
 						</c:if>
 						</td>
-						<td class="text-center">
-							<a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i>
-							<a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> 
+						<td class="text-left">
+							<a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i>Mostrar</a>
+							<a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i>Editar</a>
 							<a  href="<%=request.getContextPath()%>/ProductoEliminarServlet?id=<c:out value="${producto.id}"/>" 
 								class="btn btn-danger btn-sm">
-									<i class="fa fa-trash"></i>
+									<i class="fa fa-trash"></i>Eliminar
 							</a>
 						</td>
 					</tr>					
